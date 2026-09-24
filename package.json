@@ -2,10 +2,7 @@
   "name": "react-app",
   "version": "1.0.0",
   "description": "react app",
-  "keywords": [
-    "react",
-    "app"
-  ],
+  "keywords": [],
   "repository": {
     "type": "git",
     "url": "git remote add origin https://github.com/niveditha1yv/react-course-season1.git"
@@ -13,8 +10,12 @@
   "license": "ISC",
   "author": "Niveditha",
   "type": "commonjs",
-  "main": "App.js",
   "scripts": {
+    "start": "parcel index.html",  
+    "build": "parcel build index.html", 
     "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
   }
 }
