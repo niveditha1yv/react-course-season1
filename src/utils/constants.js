@@ -1,0 +1,5 @@
+export const LOGO_URL =
+  "https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png";
+
+export const CDN_IMG =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1600,h_640,c_fill/";
