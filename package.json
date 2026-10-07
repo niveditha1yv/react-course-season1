@@ -16,13 +16,13 @@
     "test": "jest"
   },
   "devDependencies": {
-    "parcel": "^2.16.4"
+    "@tailwindcss/postcss": "^4.3.3",
+    "parcel": "^2.16.4",
+    "tailwindcss": "^4.3.3"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.3.3",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "react-router-dom": "^6.11.2",
-    "tailwindcss": "^4.3.3"
+    "react-router-dom": "^6.11.2"
   }
 }
