@@ -1,4 +1,11 @@
+import { useDispatch } from "react-redux";
+import { addItems } from "./redux/cartSlice";
+
 const ItemMenu = ({ data }) => {
+  const dispatch = useDispatch();
+  const handleAdd = (item) => {
+    dispatch(addItems(item));
+  };
   return (
     <div>
       {data?.map((data) => (
@@ -21,7 +28,10 @@ const ItemMenu = ({ data }) => {
           </div>
           <div className="w-3/12">
             <div className="absolute">
-              <button className="bg-white p-2 my-10 mx-15 shadow-lg rounded-xl">
+              <button
+                className="bg-white p-2 my-10 mx-15 shadow-lg rounded-xl cursor-pointer"
+                onClick={() => handleAdd(data)}
+              >
                 Add +
               </button>
             </div>

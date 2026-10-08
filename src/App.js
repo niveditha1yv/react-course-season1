@@ -7,6 +7,9 @@ import RestaurentMenu from "./components/RestaurentMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { lazy, Suspense, useState, useEffect } from "react";
 import UserContext from "./utils/userContext";
+import { Provider } from "react-redux";
+import appStore from "./components/redux/createStore";
+import Cart from "./components/Cart";
 
 // code splitting , chunking, budling.
 const AboutPage = lazy(() => import("./components/About"));
@@ -25,14 +28,16 @@ const AppLayout = () => {
 
   return (
     //  Provider is used modify and update the context
-    <UserContext.Provider value={{ loggedUser: userName, setUserName }}>
-      <div>
-        <UserContext value={{ loggedUser: "Elon Mask" }}>
-          <Header />
-        </UserContext>
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedUser: userName, setUserName }}>
+        <div>
+          <UserContext value={{ loggedUser: "Elon Mask" }}>
+            <Header />
+          </UserContext>
+          <Outlet />
+        </div>
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -61,6 +66,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restuarent/:resId",
         element: <RestaurentMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,
