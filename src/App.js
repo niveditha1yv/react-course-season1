@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { lazy, Suspense, useState, useEffect } from "react";
 import UserContext from "./utils/userContext";
 import { Provider } from "react-redux";
-import appStore from "./components/redux/createStore";
+import appStore from "./redux/createStore";
 import Cart from "./components/Cart";
 
 // code splitting , chunking, budling.
