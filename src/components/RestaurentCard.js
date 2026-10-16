@@ -6,7 +6,7 @@ const RestaurentCard = (resData) => {
 
   const { loggedUser } = useContext(UserContext);
   return (
-    <div className="p-4 m-4 w-60 bg-gray-300 rounded-lg">
+    <div data-testid="resCard" className="p-4 m-4 w-60 bg-gray-300 rounded-lg">
       <img
         className="rounded-lg w-100"
         alt="card-img"
@@ -15,10 +15,10 @@ const RestaurentCard = (resData) => {
         }
       />
       <h3 className="font-bold py-3">{name}</h3>
-      <h4 className="font-normal py-1">{cuisines.join(", ")}</h4>
+      <h4 className="font-normal py-1">{cuisines?.join(", ")}</h4>
       <h4 className="font-normal py-1">{avgRating} stars</h4>
       <h4 className="font-normal py-1">{costForTwo}</h4>
-      <h4 className="font-normal py-0.5">{sla.slaString}</h4>
+      <h4 className="font-normal py-0.5">{sla?.slaString}</h4>
       <h4 className="font-normal py-0.5"> UserName: {loggedUser}</h4>
     </div>
   );

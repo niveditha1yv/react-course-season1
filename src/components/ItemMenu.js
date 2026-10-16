@@ -3,13 +3,16 @@ import { addItems } from "../redux/cartSlice";
 
 const ItemMenu = ({ data }) => {
   const dispatch = useDispatch();
+
   const handleAdd = (item) => {
     dispatch(addItems(item));
   };
+
   return (
     <div>
       {data?.map((data) => (
         <div
+          data-testid="itemData"
           key={data.card.info.id}
           className="p-2 m-2 border-gray-200 border-b-2 text-left flex"
         >

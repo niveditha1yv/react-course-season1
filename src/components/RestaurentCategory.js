@@ -16,12 +16,12 @@ const RestaurentCategory = ({ data, show, handleClick }) => {
           onClick={handleClick}
         >
           <span className="items-center font-bold">
-            {data.title} - ({data.itemCards.length})
+            {data?.title} - ({data?.itemCards.length})
           </span>
           <span>💚</span>
         </div>
 
-        {show && <ItemMenu data={data.itemCards} />}
+        {show && <ItemMenu data={data?.itemCards} />}
       </div>
     </div>
   );

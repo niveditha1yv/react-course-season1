@@ -20,7 +20,7 @@ const Body = () => {
 
   const filterData = () => {
     setFilteredRestdata(
-      listOfRestaurant.filter((res) => res.info.avgRating > 4.5),
+      listOfRestaurant?.filter((res) => res.info.avgRating > 4.5),
     );
   };
 
@@ -29,7 +29,7 @@ const Body = () => {
   if (!isOnlineStatus) {
     return <h1>Inrernent connection is off</h1>;
   }
-  return listOfRestaurant.length === 0 && loading ? (
+  return listOfRestaurant?.length === 0 && loading ? (
     <Shimmer />
   ) : (
     <div className="body">
@@ -38,13 +38,14 @@ const Body = () => {
           <input
             type="text"
             value={searchText}
+            data-testid="search"
             onChange={(e) => setSearchText(e.target.value)}
             className="p-1 m-4 w-100 border-2 border-gray-300 rounded-xl"
           />
           <button
             className="py-2 px-5 bg-gray-400 rounded-lg mr-5 hover:bg-blue-300 hover:cursor-pointer"
             onClick={() => {
-              const filterRestData = listOfRestaurant.filter((data) =>
+              const filterRestData = listOfRestaurant?.filter((data) =>
                 data.info.name.toLowerCase().includes(searchText.toLowerCase()),
               );
               setFilteredRestdata(filterRestData);
@@ -73,7 +74,7 @@ const Body = () => {
       </div>
 
       <div className="flex flex-wrap">
-        {filteredRestdata.map((card) => (
+        {filteredRestdata?.map((card) => (
           <Link to={"restuarent/" + card.info.id} key={card.info.id}>
             {card.info.avgRating > 4.5 ? (
               <RestaurentCardPromoted resData={card.info} />
